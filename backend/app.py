@@ -89,7 +89,7 @@ def generate_schedule():
     return jsonify(result)
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", "5000"))
+    port = int(os.environ.get("PORT", "10000"))
     try:
         from waitress import serve
 
