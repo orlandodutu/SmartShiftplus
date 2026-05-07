@@ -1,0 +1,5 @@
+flask
+flask-cors
+pulp
+gunicorn; platform_system != "Windows"
+waitress; platform_system == "Windows"

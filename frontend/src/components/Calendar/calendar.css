@@ -1,0 +1,279 @@
+.calWrap {
+  display: grid;
+  gap: 14px;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.rangeTitle {
+  display: grid;
+  gap: 2px;
+}
+
+.rangeTitle h2 {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
+.rangeTitle p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(2, 6, 23, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.segmented button {
+  border: 0;
+  background: transparent;
+  padding: 8px 10px;
+  font-size: 13px;
+  color: rgba(226, 232, 240, 0.8);
+  cursor: pointer;
+}
+
+.segmented button[aria-pressed="true"] {
+  background: linear-gradient(180deg, rgba(34, 211, 238, 0.16), rgba(96, 165, 250, 0.12));
+  color: rgba(226, 232, 240, 0.95);
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: rgba(2, 6, 23, 0.35);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  color: rgba(226, 232, 240, 0.92);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.btnPrimary {
+  border-color: rgba(34, 211, 238, 0.35);
+  background: linear-gradient(180deg, rgba(34, 211, 238, 0.18), rgba(96, 165, 250, 0.12));
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.grid {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(2, 6, 23, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: rgba(2, 6, 23, 0.35);
+  border-bottom: 1px solid var(--border);
+}
+
+.weekday {
+  padding: 10px 10px;
+  font-size: 12px;
+  color: rgba(226, 232, 240, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cellsMonth {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.cellsWeek {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.cell {
+  min-height: 92px;
+  border-right: 1px solid rgba(148, 163, 184, 0.14);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+  padding: 10px;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.cell:nth-child(7n) {
+  border-right: none;
+}
+
+.cellMuted {
+  background: rgba(2, 6, 23, 0.16);
+  color: rgba(226, 232, 240, 0.42);
+}
+
+.dayTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.shifts {
+  display: grid;
+  gap: 6px;
+}
+
+.shiftItem {
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.55), rgba(2, 6, 23, 0.35));
+  border-radius: 10px;
+  padding: 6px 8px;
+  line-height: 1.2;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.shiftTime {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.shiftText {
+  margin-top: 2px;
+  font-size: 11px;
+  color: rgba(226, 232, 240, 0.78);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shiftName {
+  font-weight: 600;
+}
+
+.shiftRole {
+  font-weight: 500;
+  color: rgba(226, 232, 240, 0.6);
+}
+
+.shiftMore {
+  font-size: 11px;
+  color: rgba(226, 232, 240, 0.6);
+}
+
+.noShifts {
+  min-height: 2px;
+}
+
+.dayNum {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.today .dayNum {
+  background: rgba(34, 211, 238, 0.14);
+  border: 1px solid rgba(34, 211, 238, 0.35);
+}
+
+.badge {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  color: rgba(226, 232, 240, 0.72);
+  white-space: nowrap;
+  background: rgba(2, 6, 23, 0.25);
+}
+
+.printHeader {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+
+  .toolbar {
+    display: none;
+  }
+
+  .printHeader {
+    display: grid;
+    gap: 4px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(17, 24, 39, 0.2);
+  }
+
+  .printHeader h1 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .printHeader p {
+    margin: 0;
+    font-size: 12px;
+    color: rgba(17, 24, 39, 0.75);
+  }
+
+  .cell {
+    min-height: 86px;
+    padding: 8px;
+  }
+
+  .badge {
+    display: none;
+  }
+
+  .weekday {
+    font-size: 11px;
+    color: #111827;
+  }
+
+  .shiftItem {
+    background: #fff;
+    border-color: rgba(17, 24, 39, 0.25);
+    border-radius: 8px;
+  }
+
+  .shiftTime {
+    font-size: 11px;
+    color: #111827;
+  }
+
+  .shiftText {
+    font-size: 11px;
+    color: #111827;
+  }
+
+  .cellMuted {
+    background: transparent;
+    color: rgba(17, 24, 39, 0.55);
+  }
+}
