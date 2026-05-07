@@ -12,10 +12,9 @@ services:
       - key: PYTHON_VERSION
         value: 3.10.0
 
-  - type: web
+  - type: static
     name: smartshift-frontend
     env: static
     rootDir: frontend
-    plan: free
     buildCommand: npm install && npm run build
     staticPublishPath: dist
